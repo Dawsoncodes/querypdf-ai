@@ -73,6 +73,8 @@ There are a lot of things that can be improved in this project, but here are som
 
 - **Improve the summarization**: The summarization takes a lot of time, a better way to do this is to keep it as a background job and notify the user when it's done, and be able to see the same summarization again without having to generated again from scratch.
 
+- **Save embeddings in parallel**: Currently, the embeddings are saved one by one, we can improve this by saving them in parallel, this will reduce the time it takes to save the embeddings.
+
 ## License
 
 This project is licensed under the MIT License.
