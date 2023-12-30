@@ -23,7 +23,7 @@ while [ $attempt -le $max_retries ]; do
 
         echo "Embeddings saved"
 
-        echo "Starting waitress server"
+        echo "Starting the flask server"
 
         gunicorn -w 4 -b 0.0.0.0:5000 'main:app'
 
