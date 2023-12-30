@@ -1,0 +1,25 @@
+version: "3.1"
+
+services:
+  chroma:
+    image: "chromadb/chroma"
+    environment:
+      - ALLOW_RESET=TRUE
+
+  server:
+    build: ./server
+    ports:
+      - "5000:5000"
+    depends_on:
+      - chroma
+    environment:
+      - CHROMA_HOST=chroma
+
+  ui:
+    build: ./ui
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_SERVER_URL=http://localhost:5000
+    depends_on:
+      - server

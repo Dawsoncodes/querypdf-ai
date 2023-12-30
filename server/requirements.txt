@@ -1,0 +1,11 @@
+langchain==0.0.348
+flask==2.3.3
+python-magic==0.4.27
+Flask-Cors==4.0.0
+chromadb==0.4.20
+openai==1.6.0
+pandas==2.1.4
+tiktoken==0.5.2
+gunicorn==21.2.0
+waitress==2.1.2
+unstructured==0.11.6
