@@ -39,7 +39,7 @@ const CenteredContainer: FC<{ children: ReactNode }> = (props) => {
 const HealthCheck: FC<{ children: ReactNode }> = ({ children }) => {
   const [error, setError] = useState<boolean>(false)
 
-  const { isLoading, isError } = useQuery({
+  const { isLoading, isError, isSuccess } = useQuery({
     queryKey: ["health"],
     queryFn: () =>
       client.get<{ message: string }>("/_health").then((r) => r.data),
@@ -49,7 +49,7 @@ const HealthCheck: FC<{ children: ReactNode }> = ({ children }) => {
   useEffect(() => {
     if (isError) {
       setError(true)
-    } else {
+    } else if (isSuccess) {
       setError(false)
     }
   }, [isError])
