@@ -29,8 +29,11 @@ def save_embeddings(reset_db: bool):
         print("Resetting database...")
         client.reset()
 
+    if os.path.exists(base_dir):
+        print("Removing old data...")
+        shutil.rmtree(base_dir)
+
     print("Formatting documents...")
-    shutil.rmtree(base_dir)
     format_document()
 
     collections = get_collections()
