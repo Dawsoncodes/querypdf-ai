@@ -63,13 +63,15 @@ def save_embeddings(reset_db: bool):
                 collection, ids, chroma_collection_names)
 
             if len(filtered_ids) < 1 or len(filtered_ids) != len(ids):
-                print(f"Skipping ids for {collection}: ", [id for id in ids])
+                print(f"Skipping ids for {collection}:",
+                      ", ".join([id for id in ids]))
                 continue
 
             chroma_client.from_documents(docs, collection_name=collection,
                                          ids=filtered_ids, embedding=OpenAIEmbeddings(), client=client)
 
-        print("Generated all embeddings for collections: ", collections)
+    print("Generated all embeddings for collections:\n-",
+          "\n- ".join(collections))
 
 
 if __name__ == "__main__":
