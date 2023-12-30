@@ -75,6 +75,8 @@ There are a lot of things that can be improved in this project, but here are som
 
 - **Improve the formatting of the documents**: The [format_docs.py](/server/data/format_docs.py) function can be improved a lot, when the documents are formatted, you can see in some of the documents contain a lot of unnecessary text and unmeaningful numbers, with a better script, we can remove all of that and only keep the important text.
 
+- **Using streaming for better user experience**: Currently, the flask server will wait for the OpenAI API to get back the response, this can take a long time, and the user will have to wait for the response, we can improve this by using streaming, so the user can see the response as soon as it's ready.
+
 - **Dynamic PDF file upload**: Currently, there are only 3 documents which are all a part of the [text_segments.csv](/server/data/text_segments.csv) file, we can improve this by allowing the user to upload their own PDF files and then format them and generate embeddings for them so they can be used by the AI assistant to answer questions and summarize the documents.
 
 - **Improve the summarization**: The summarization takes a lot of time, a better way to do this is to keep it as a background job and notify the user when it's done, and be able to see the same summarization again without having to generated again from scratch.
