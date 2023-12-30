@@ -20,7 +20,7 @@ export const Footer = () => {
         <a
           target="_blank"
           className="text-blue-400 flex items-center justify-center gap-1"
-          href="https://github.com/dawsoncodes/byte-genie"
+          href="https://github.com/dawsoncodes/querypdf-ai"
         >
           <IconBrandGithub />
           GitHub
