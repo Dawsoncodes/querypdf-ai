@@ -20,6 +20,12 @@ A simple project that uses the [OpenAI API](https://platform.openai.com/) to ans
 - Set `CHROMA_HOST` in the `.env` file to `chroma` for container compatibility.
 - Run `docker-compose up -d --build` to start the services.
 
+> **Note:** if you are on Windows and get this error `./entrypoint.sh: no such file or directory` consider cloning the repo with the following config
+
+```bash
+git clone git@github.com:Dawsoncodes/querypdf-ai.git --config core.autocrlf=false
+```
+
 ### This setup will initiate three services:
 
 - [Chroma verctor database](https://github.com/chroma-core/chroma) server
