@@ -6,7 +6,7 @@
 
 ## Overview
 
-This project is an AI-powered assistant designed to answer questions about specific PDF files and summarize their content. It features a Q/A AI assistant using embedding search to provide accurate responses.
+A simple project that uses the [OpenAI API](https://platform.openai.com/) to answer questions about specific PDF files and summarize their content. It uses the [Langchain](https://github.com/langchain-ai/langchain) library to integrate the OpenAI API with the Chroma vector database and handle queries.
 
 ## Requirements
 
