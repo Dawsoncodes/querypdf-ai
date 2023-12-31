@@ -25,7 +25,10 @@ while [ $attempt -le $max_retries ]; do
 
         echo "Starting the flask server"
 
-        gunicorn -w 4 -b 0.0.0.0:5000 'main:app'
+        gunicorn 'main:app' \
+            -w 4 \
+            -b 0.0.0.0:5000 \
+            --timeout 1000
 
         exit 0
     fi
