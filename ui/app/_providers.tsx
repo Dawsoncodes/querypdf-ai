@@ -52,7 +52,7 @@ const HealthCheck: FC<{ children: ReactNode }> = ({ children }) => {
     } else if (isSuccess) {
       setError(false)
     }
-  }, [isError])
+  }, [isError, isSuccess])
 
   if (isLoading || isError) {
     return <CenteredContainer>Waiting for server...</CenteredContainer>
