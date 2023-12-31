@@ -69,6 +69,21 @@ If you want to understand a bit about the code and how is it, please read this s
   - The chroma server doesn't start right away, it will install some dependencies after the image is built and ran, so the script will continuously check if the chroma server is ready to accept connections. After the chroma server is ready, it will start the [save_embeddings.py](/server/save_embeddings.py) function.
   - After the [save_embeddings.py](/server/save_embeddings.py) function is done, it will start the flask server using gunicon.
 
+## The frontend [ui](/ui)
+
+The frontend is written in NextJS it is a simple project with 2 pages:
+
+- The home page: From this page the user will select the document that they want to ask questions about or summarize.
+- The chat page: From this page the user will be able to ask questions about the document and get answers from the AI assistant, they will also be able to summarize the document.
+
+### The APIs used by the frontend
+
+There are 3 APIs that are being used by the NextJS frontend:
+
+- **GET /\_health**: This API is used to check if the backend is ready to accept connections, it will ping the backend every 1 second until it gets a success response, then it will show the contents of the page.
+- **POST /chat**: This API is used to ask questions about the document, it will send the question to the backend and get the answer from the AI assistant.
+- **POST /summarize**: This API is used to summarize the document, it will send the document to the backend and get the summary from the AI assistant.
+
 ## What can be improved?
 
 There are a lot of things that can be improved in this project, but here are some of the most important ones:
